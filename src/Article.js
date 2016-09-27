@@ -2,10 +2,20 @@ import React, { Component } from 'react'
 
 export default class Article extends Component {
 
+    constructor(props) {
+        super()
+        this.state = {
+            isOpen: false,
+            foo: 'bar'
+        }
+    }
+
+/*
     state = {
         isOpen: false,
         foo: 'bar'
     }
+*/
 
     render() {
         const { article } = this.props

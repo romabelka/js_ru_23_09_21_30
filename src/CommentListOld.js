@@ -8,6 +8,22 @@ const CommentListOld = React.createClass({
 
     },
 
+    componentWillMount() {
+        console.log('---', 'mounting')
+        debugger
+    },
+
+    componentDidMount() {
+        console.log('---', 'mounted')
+        debugger
+    },
+
+    componentWillUnmount() {
+        console.log('---', 'unmounting')
+        debugger
+    },
+
+
     render() {
         const { comments } = this.props
         const { isOpen } = this.state

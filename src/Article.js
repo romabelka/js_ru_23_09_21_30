@@ -2,6 +2,20 @@ import React, { Component } from 'react'
 import CommentList from './CommentList'
 
 export default class Article extends Component {
+    static defaultProps = {
+
+    }
+    componentWillMount() {
+        console.log('---', 'mounting')
+    }
+
+    componentDidMount() {
+        console.log('---', 'mounted')
+    }
+
+    componentWillUnmount() {
+        console.log('---', 'unmounting')
+    }
 
     constructor(props) {
         super()

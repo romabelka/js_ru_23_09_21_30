@@ -20,7 +20,6 @@ export default class Article extends Component {
     constructor(props) {
         super()
         this.state = {
-            isOpen: false,
             foo: 'bar'
         }
     }
@@ -33,14 +32,13 @@ export default class Article extends Component {
 */
 
     render() {
-        const { article } = this.props
-        const { isOpen } = this.state
+        const { article, isOpen, openArticle } = this.props
 
         const body = isOpen ? <section>{article.text}<CommentList comments = {article.comments} /></section> : null
         // <section style = {{display: isOpen ? 'block' : 'none'}}>{article.text}</section>
         return (
             <div>
-                <h3 onClick = {this.toggleOpen}>{article.title}</h3>
+                <h3 onClick = {openArticle}>{article.title}</h3>
                 {body}
             </div>
         )

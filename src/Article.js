@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import CommentList from './CommentList'
+import CommentList from './CommentListOld'
 
 export default class Article extends Component {
 

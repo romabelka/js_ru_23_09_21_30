@@ -16,6 +16,7 @@ class ArticleList extends Component {
 
         const articleComponents = articles.map(article => (
             <li key={article.id} >
+                <a href = "#" onClick = {this.changeTitle(article)} >change title</a>
                 <Article article = {article} isOpen = {isItemOpen(article.id)} openArticle = {toggleItem(article.id)} />
             </li>))
 
@@ -27,6 +28,12 @@ class ArticleList extends Component {
                 <Chart />
             </div>
         )
+    }
+
+    changeTitle = article => ev => {
+        ev.preventDefault()
+        article.title = 'some new title'
+        this.setState({})
     }
 }
 

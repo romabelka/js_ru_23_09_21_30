@@ -9,9 +9,27 @@ export default class Article extends Component {
         openArticle: PropTypes.func.isRequired
     }
 
+    componentDidMount() {
+        console.log('---', 'mounting')
+    }
+
+    componentWillUnmount() {
+        console.log('---', 'unmounting')
+    }
+
+    componentDidUpdate() {
+        console.log('---', 'updating')
+    }
+
     handleRef(ref) {
         console.log('---', findDOMNode(ref))
     }
+/*
+
+    shouldComponentUpdate(nextProps, nextState) {
+        return (this.props.isOpen != nextProps.isOpen)
+    }
+*/
 
     render() {
         const { article, isOpen, openArticle } = this.props

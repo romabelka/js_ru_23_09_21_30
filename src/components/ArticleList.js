@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import Article from './Article'
 import Chart from './Chart'
-import accordion from './decorators/accordion'
+import accordion from './../decorators/accordion'
 
 class ArticleList extends Component {
     static propTypes = {

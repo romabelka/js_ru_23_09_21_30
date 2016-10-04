@@ -1,6 +1,6 @@
 import React from 'react'
 import Comment from './Comment'
-import toggleOpen from './mixins/toggleOpen'
+import toggleOpen from './../mixins/toggleOpen'
 
 const CommentListOld = React.createClass({
     mixins: [toggleOpen],

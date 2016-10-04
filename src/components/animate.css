@@ -1,0 +1,17 @@
+.article-enter {
+    opacity: 0;
+}
+
+.article-enter.article-enter-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+}
+
+.article-leave {
+    opacity: 1;
+}
+
+.article-leave.article-leave-active {
+    opacity: 0;
+    transition: opacity 300ms ease-in;
+}

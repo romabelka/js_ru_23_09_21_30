@@ -14,3 +14,15 @@ links:
 * https://facebook.github.io/react/docs/reusable-components.html
 * https://medium.com/@dan_abramov/mixins-are-dead-long-live-higher-order-components-94a0d2f9e750#.zdiz4yi8x
 * https://facebook.github.io/react/docs/component-specs.html
+
+##ДЗ 3.1 Взять https://github.com/gpbl/react-day-picker и сделать календарь(в Filters), отображать выбранный промежуток дат текстом
+##ДЗ 3.2 Добавить в CommentList форму для нового коммента, при сабмите выводить новый коммент в консоль(не надо никуда реально добавлять)
+##ДЗ 3.3 Посмотреть первую часть скринкастп по Flux
+
+links:
+* https://facebook.github.io/react/docs/pure-render-mixin.html
+* https://react.rocks/
+* https://github.com/JedWatson/react-select
+* https://github.com/webpack/css-loader
+* https://facebook.github.io/react/docs/animation.html
+* https://github.com/gpbl/react-day-picker

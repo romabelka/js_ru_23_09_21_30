@@ -1,6 +1,7 @@
 import React from 'react'
 import { render } from 'react-dom'
 import Container from './components/Container'
-import { articles } from './fixtures'
+import store from './store'
+import { Provider } from 'react-redux'
 
-render(<Container articles = {articles}/>, document.getElementById('container'))
+render(<Provider store = {store}><Container /></Provider>, document.getElementById('container'))

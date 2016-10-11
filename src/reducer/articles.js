@@ -1,7 +1,7 @@
 import { DELETE_ARTICLE } from '../constants'
-import { articles as defaultArticles } from '../fixtures'
+import { normalizedArticles } from '../fixtures'
 
-export default (articles = defaultArticles, action) => {
+export default (articles = normalizedArticles, action) => {
     const { type, payload } = action
 
     switch (type) {

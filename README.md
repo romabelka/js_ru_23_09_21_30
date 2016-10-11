@@ -35,3 +35,16 @@ view -> AC -> store.dispatch -> reducer -> store -> store.subscribe -> view
 links:
 * https://slides.com/romaniakobchuk/deck-9-10-11-13-16
 * http://redux.js.org/
+
+##ДЗ 5.1 Написать мидлвару для генерации id
+##ДЗ 5.2 Добавить функционал добавления коммента к статье
+##ДЗ 5.3 Хранить статьи и комменты в виде Immutable.Record
+##ДЗ 5.4 Посмотреть вторую часть скринкаста по Flux
+
+links:
+* https://github.com/paularmstrong/normalizr
+* https://facebook.github.io/immutable-js/docs/
+* https://slides.com/romaniakobchuk/deck-9-10-11-13-16/live#/7
+* http://redux.js.org/docs/advanced/Middleware.html
+* https://github.com/gaearon/redux-devtools
+* https://github.com/zalmoxisus/redux-devtools-extension

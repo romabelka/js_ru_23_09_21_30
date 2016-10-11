@@ -1,7 +1,8 @@
 import { DELETE_ARTICLE } from '../constants'
 import { normalizedArticles } from '../fixtures'
+import { arrayToMap } from '../store/helpers'
 
-export default (articles = normalizedArticles, action) => {
+export default (articles = arrayToMap(normalizedArticles), action) => {
     const { type, payload } = action
 
     switch (type) {

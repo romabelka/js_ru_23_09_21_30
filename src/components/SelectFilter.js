@@ -29,6 +29,6 @@ class SelectFilter extends Component {
 }
 
 export default connect(state => ({
-    selected: state.filters.selected,
+    selected: state.filters.get('selected'),
     articles: Object.keys(state.articles).map(id => state.articles[id])
 }), { changeSelection })(SelectFilter)

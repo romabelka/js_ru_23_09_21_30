@@ -7,7 +7,9 @@ export default (articles = arrayToMap(normalizedArticles), action) => {
 
     switch (type) {
         case DELETE_ARTICLE:
-            return articles.filter(article => article.id != payload.id)
+            return Object.keys(articles)
+                .filter(id => id != payload.id)
+                .reduce((acc, id) => ({...acc, [id]: articles[id]}), {})
     }
     return articles
 }

@@ -1,5 +1,5 @@
 import { normalizedArticles } from '../fixtures'
-import { DELETE_ARTICLE, ADD_COMMENT, LOAD_ALL_ARTICLES, START, SUCCESS, FAIL } from '../constants'
+import { DELETE_ARTICLE, ADD_COMMENT, LOAD_ALL_ARTICLES, LOAD_ARTICLE, START, SUCCESS, FAIL } from '../constants'
 import { arrayToMap } from '../store/helpers'
 import { Record, Map } from 'immutable'
 
@@ -8,6 +8,7 @@ const ArticleModel = Record({
     date: null,
     title: "",
     text: "",
+    loading: false,
     comments: []
 })
 
@@ -36,6 +37,13 @@ export default (articles = defaultState, action) => {
                 .set('entities', arrayToMap(response, article => new ArticleModel(article)))
                 .set('loading', false)
                 .set('loaded', true)
+
+        case LOAD_ARTICLE + START:
+            return articles.setIn(['entities', payload.id, 'loading'], true)
+
+        case LOAD_ARTICLE + SUCCESS:
+            return articles
+                .setIn(['entities', payload.id], new ArticleModel(response))
     }
 
     return articles

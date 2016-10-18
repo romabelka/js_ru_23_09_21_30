@@ -11,19 +11,15 @@ const ArticleModel = Record({
     comments: []
 })
 
-export default (articles = arrayToMap(normalizedArticles), action) => {
-    const { type, payload } = action
+export default (articles = arrayToMap(normalizedArticles, article => new ArticleModel(article)), action) => {
+    const { type, payload, generatedId } = action
 
     switch (type) {
         case DELETE_ARTICLE:
-            return articles.filter(article => article.id != payload.id)
+            return articles.delete(payload.id)
 
         case ADD_COMMENT:
-            return {...articles,
-                [payload.articleId]: {...articles[payload.articleId],
-                    comments: articles[payload.articleId].comments.concat(action.generatedId)
-                }
-            }
+            return articles.updateIn([payload.articleId, 'comments'], comments => comments.concat(generatedId))
     }
 
     return articles

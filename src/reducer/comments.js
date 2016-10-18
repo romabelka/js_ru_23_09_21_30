@@ -14,7 +14,7 @@ export default (comments = arrayToMap(normalizedComments, comment => new Comment
 
     switch (type) {
         case ADD_COMMENT:
-            return {...comments, [generatedId]: new CommentModel({...payload.comment, id: action.generatedId})}
+            return comments.set(generatedId, new CommentModel({...payload.comment, id: generatedId}))
     }
 
     return comments

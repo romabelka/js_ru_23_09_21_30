@@ -1,7 +1,7 @@
 import { normalizedArticles } from '../fixtures'
-import { DELETE_ARTICLE, ADD_COMMENT } from '../constants'
+import { DELETE_ARTICLE, ADD_COMMENT, LOAD_ALL_ARTICLES } from '../constants'
 import { arrayToMap } from '../store/helpers'
-import { Record } from 'immutable'
+import { Record, Map } from 'immutable'
 
 const ArticleModel = Record({
     id: null,
@@ -11,8 +11,9 @@ const ArticleModel = Record({
     comments: []
 })
 
-export default (articles = arrayToMap(normalizedArticles, article => new ArticleModel(article)), action) => {
-    const { type, payload, generatedId } = action
+// arrayToMap(normalizedArticles, article => new ArticleModel(article))
+export default (articles = new Map({}), action) => {
+    const { type, payload, generatedId, response } = action
 
     switch (type) {
         case DELETE_ARTICLE:
@@ -20,6 +21,9 @@ export default (articles = arrayToMap(normalizedArticles, article => new Article
 
         case ADD_COMMENT:
             return articles.updateIn([payload.articleId, 'comments'], comments => comments.concat(generatedId))
+
+        case LOAD_ALL_ARTICLES:
+            return articles.merge(arrayToMap(response, article => new ArticleModel(article)))
     }
 
     return articles

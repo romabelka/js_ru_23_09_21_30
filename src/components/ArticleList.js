@@ -4,6 +4,7 @@ import Loader from './Loader'
 import accordion from './../decorators/accordion'
 import { loadAllArticles } from '../AC/articles'
 import { connect } from 'react-redux'
+import { Link } from 'react-router'
 
 class ArticleList extends Component {
     static propTypes = {
@@ -25,7 +26,7 @@ class ArticleList extends Component {
 
         const articleComponents = articles.map(article => (
             <li key={article.id} >
-                <Article article = {article} isOpen = {isItemOpen(article.id)} openArticle = {toggleItem(article.id)} />
+                <Link to = {`/articles/${article.id}`}>{article.title}</Link>
             </li>))
 
         return (

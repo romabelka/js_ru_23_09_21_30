@@ -1,6 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import { increment } from '../AC/counter'
 import { connect } from 'react-redux'
+import ComponentWrapper from './ComponentWrapper'
 
 class Counter extends Component {
     static propTypes = {
@@ -10,8 +11,10 @@ class Counter extends Component {
     render() {
         return (
             <div>
-                <h3>{this.props.count}</h3>
-                <a href="#" onClick = {this.handleIncrement}>increment me</a>
+                <ComponentWrapper>
+                    <h3>{this.props.count}</h3>
+                    <a href="#" onClick = {this.handleIncrement}>increment me</a>
+                </ComponentWrapper>
             </div>
         )
     }

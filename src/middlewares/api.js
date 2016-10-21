@@ -1,4 +1,3 @@
-import $ from 'jquery'
 import { START, SUCCESS, FAIL } from '../constants'
 
 export default store => next => action => {

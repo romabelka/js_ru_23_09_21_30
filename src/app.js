@@ -1,7 +1,5 @@
-import React from 'react'
 import { render } from 'react-dom'
 import Container from './components/Container'
-import store from './store'
-import { Provider } from 'react-redux'
+import routes from './routes'
 
-render(<Provider store = {store}><Container /></Provider>, document.getElementById('container'))
+render(routes, document.getElementById('container'))

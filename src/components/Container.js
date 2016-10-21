@@ -1,11 +1,7 @@
 import React, { Component, PropTypes } from 'react'
-import ArticleList from './ArticleList'
-import Chart from './Chart'
-import NewArticleForm from './NewArticleForm'
-import Filters from './Filters'
-import Counter from './Counter'
 import { Provider } from 'react-redux'
 import store from '../store'
+import { Link } from 'react-router'
 
 class Container extends Component {
     static propTypes = {};
@@ -14,11 +10,13 @@ class Container extends Component {
         return (
             <Provider store = {store}>
                 <div>
-                    <Counter />
-                    <Filters articles={[]}/>
-                    <ArticleList />
-                    <Chart />
-                    <NewArticleForm />
+                    <ul>
+                        <li><Link to = "/articles" activeClassName = "active" activeStyle = {{color: 'red'}}>articles</Link></li>
+                        <li><Link to = "/counter" activeClassName = "active" activeStyle = {{color: 'red'}}>counter</Link></li>
+                        <li><Link to = "/new" activeClassName = "active" activeStyle = {{color: 'red'}}>new</Link></li>
+                        <li><Link to = "/filters" activeClassName = "active" activeStyle = {{color: 'red'}}>filters</Link></li>
+                    </ul>
+                    {this.props.children}
                 </div>
             </Provider>
         )

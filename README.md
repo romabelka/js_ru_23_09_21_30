@@ -59,3 +59,5 @@ links:
 * https://www.npmjs.com/package/redux-promise
 * https://github.com/ashaffer/redux-multi
 * https://github.com/gaearon/redux-thunk
+
+##ДЗ 7 Сделать роут (/comments/(page)) для пагинации всех доступных комментов(по 5 на страницу), api: /api/comment?limit=5&offset=10

@@ -2,7 +2,7 @@ import React, { Component, PropTypes } from 'react'
 
 class NewCommentForm extends Component {
     static propTypes = {
-        articleId: PropTypes.string.isRequired,
+        articleId: PropTypes.string,
         addComment: PropTypes.func.isRequired
     };
 

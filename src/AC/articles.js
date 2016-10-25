@@ -1,5 +1,6 @@
 import { DELETE_ARTICLE, LOAD_ALL_ARTICLES, LOAD_ARTICLE, START, SUCCESS, FAIL } from '../constants'
 import $ from 'jquery'
+import history  from '../history'
 
 export function deleteArticle(id) {
     return {
@@ -29,6 +30,9 @@ export function loadArticle(id) {
                     payload: { id },
                     response
                 }))
+                .fail(error => {
+                    history.replace('/error?message=Article not found')
+                })
         }, 1000)
     }
 }

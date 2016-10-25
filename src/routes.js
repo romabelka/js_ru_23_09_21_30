@@ -18,7 +18,11 @@ export default <Router history = {history}>
     <Route path = "/" component = {Container} >
         <IndexRedirect to = "/articles" />
         <Redirect from = "article" to = "articles" />
-        <Route path = "articles" component = {ArticleList}>
+        <Route path = "articles" component = {ArticleList}
+            onEnter = {() => console.log('---', 'entering articles')}
+            onLeave = {() => console.log('---', 'leaving articles')}
+            onChange = {() => console.log('---', 'changing articles')}
+        >
             <IndexRoute component = {ArticleIndexPage} />
             <Route path = "new" component = {NewArticleForm}
                 onEnter = {(nextState, replace) => authorizeUser() || replace('/error?message=Not authorized')}

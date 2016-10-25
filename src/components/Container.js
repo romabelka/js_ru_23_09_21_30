@@ -13,7 +13,7 @@ class Container extends Component {
                     <ul>
                         <li><Link to = "/articles" activeClassName = "active" activeStyle = {{color: 'red'}}>articles</Link></li>
                         <li><Link to = "/counter" activeClassName = "active" activeStyle = {{color: 'red'}}>counter</Link></li>
-                        <li><Link to = "/new" activeClassName = "active" activeStyle = {{color: 'red'}}>new</Link></li>
+                        <li><Link to = "/articles/new" activeClassName = "active" activeStyle = {{color: 'red'}}>new</Link></li>
                         <li><Link to = "/filters" activeClassName = "active" activeStyle = {{color: 'red'}}>filters</Link></li>
                         <li><Link to = "/articles/1234" activeClassName = "active" activeStyle = {{color: 'red'}}>wrong article</Link></li>
                     </ul>

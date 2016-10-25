@@ -1,6 +1,7 @@
 import React from 'react'
 import { Router, Route, Redirect, IndexRedirect, IndexRoute, hashHistory, browserHistory } from 'react-router'
 import history from './history'
+import { authorizeUser } from './store/helpers'
 import Container from './components/Container'
 import ArticleList from './routeHandlers/ArticleListPage'
 import NewArticleForm from './components/NewArticleForm'
@@ -19,7 +20,9 @@ export default <Router history = {history}>
         <Redirect from = "article" to = "articles" />
         <Route path = "articles" component = {ArticleList}>
             <IndexRoute component = {ArticleIndexPage} />
-            <Route path = "new" component = {NewArticleForm} />
+            <Route path = "new" component = {NewArticleForm}
+                onEnter = {(nextState, replace) => authorizeUser() || replace('/error?message=Not authorized')}
+            />
             <Route path = ":id" component = {ArticlePage}/>
         </Route>
         <Route path = "filters" component = {Filters} />
